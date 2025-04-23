@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل المنتج</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="product-details" id="product-details"></div>
+
+  <script>
+    const product = JSON.parse(localStorage.getItem("productDetails"));
+    const container = document.getElementById("product-details");
+
+    if (!product) {
+      container.innerHTML = "<p style='color:white;'>لا توجد تفاصيل متاحة لهذا المنتج.</p>";
+    } else {
+      container.innerHTML = `
+        <div class="product-card">
+          <img src="${product.image}" alt="${product.name}">
+          <h2>${product.name}</h2>
+          <p>${product.description}</p>
+          <p><strong>السعر:</strong> ${product.price} جنيه</p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<script>
+  function addToCart(name, price, image) {
+    // 1. جلب المنتجات الموجودة
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // 2. إنشاء المنتج الجديد
+    let product = {
+      name: name,
+      price: price,
+      image: image
+    };
+
+    // 3. إضافته للسلة
+    cart.push(product);
+
+    // 4. حفظ التحديث
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // 5. إعلام المستخدم
+    alert("تمت إضافة المنتج للسلة 🛒");
+  }
+</script>

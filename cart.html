@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>سلة المشتريات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="title">سلة المشتريات</h1>
+  <div class="products-container" id="cart-container"></div>
+
+  <script>
+    const cartContainer = document.getElementById("cart-container");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p style='color:white;'>السلة فارغة حالياً.</p>";
+    } else {
+      cart.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h2>${product.name}</h2>
+          <p>${product.price} جنيه</p>
+        `;
+        cartContainer.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>

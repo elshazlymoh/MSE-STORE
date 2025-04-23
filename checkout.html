@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الدفع</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="checkout-container">
+    <h1>سلة المشتريات</h1>
+    <div id="cart-items"></div>
+    <h2 id="total-price">الإجمالي: 0 جنيه</h2>
+
+    <h3>معلومات العميل</h3>
+    <form id="checkout-form">
+      <input type="text" placeholder="الاسم الكامل" required><br>
+      <input type="text" placeholder="العنوان" required><br>
+      <input type="tel" placeholder="رقم الهاتف" required><br>
+      <button type="submit">تأكيد الطلب</button>
+    </form>
+  </div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cart-items");
+    const totalPriceElem = document.getElementById("total-price");
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p>السلة فارغة.</p>";
+    } else {
+      cart.forEach(item => {
+        cartContainer.innerHTML += `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <p>${item.name}</p>
+            <p>${item.price} جنيه</p>
+          </div>
+        `;
+        total += item.price;
+      });
+    }
+
+    totalPriceElem.textContent = "الإجمالي: " + total + " جنيه";
+
+    document.getElementById("checkout-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("تم تأكيد طلبك! شكراً لتسوقك معنا.");
+      localStorage.removeItem("cart"); // امسح السلة بعد الطلب
+      window.location.href = "home.html";
+    });
+  </script>
+</body>
+</html>

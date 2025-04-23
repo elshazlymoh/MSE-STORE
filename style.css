@@ -1,0 +1,121 @@
+/* ✅ إعدادات عامة */
+* {
+    box-sizing: border-box;
+    direction: rtl; /* غيرها لـ ltr للإنجليزي */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* ✅ الهيدر والعناوين */
+  h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #00ffd5;
+  }
+  
+  /* ✅ الكروت / المنتجات */
+  .product-card, .cart-item {
+    background-color: #1e2d3a;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover {
+    transform: scale(1.03);
+  }
+  .product-card img, .cart-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* ✅ أزرار */
+  button, input[type="submit"] {
+    background-color: #00cc99;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover, input[type="submit"]:hover {
+    background-color: #00b388;
+  }
+  
+  /* ✅ النموذج */
+  form {
+    max-width: 400px;
+    margin: auto;
+  }
+  form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+  }
+  
+  /* ✅ السلة */
+  #cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* ✅ التنقل بين اللغات */
+  #lang-select {
+    width: 120px;
+    margin: 20px auto;
+    display: block;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  /* ✅ الروابط */
+  a {
+    color: #00ffd5;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    .product-card, .cart-item, form {
+      width: 90%;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar a, #lang-select {
+      margin: 10px 0;
+    }
+  }
+  .footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #111;
+  color: #bbb;
+  border-top: 1px solid #333;
+}

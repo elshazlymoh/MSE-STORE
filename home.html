@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSE STORE - الرئيسية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <h1 id="title"></h1>
+<button id="add-to-cart-btn"></button>
+<a id="checkout-link" href="checkout.html"></a>
+
+<select id="lang-select">
+  <option value="ar">العربية</option>
+  <option value="en">English</option>
+</select>
+
+  <header>
+    <nav>
+      <ul>
+        <footer class="footer"
+    
+        ></footer><li><a href="home.html">الرئيسية</a></li>
+     <li><a href="login.html">تسجيل الدخول</a></li>
+        <li><a href="register.html">إنشاء حساب</a></li>
+        <a href="contact.html">اتصل بنا</a>
+      <footer></footer>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+<h1 class="title">منتجاتنا</h1>
+<div class="products-container">
+
+
+<div class="product-card">
+<img src="C:\Users\User\OneDrive - Egyptian E-Learning University\Pictures\Facebook_files\480781294_1619479368683366_7505419152361342096_n(1).jpg" alt="منتج 1">
+<h2>الأهلي اسود</h2>
+<p>150 جنيه</p>
+<button>إضافة للسلة</button>
+<button onclick="viewDetails('تيشرت الأهلي', 150, 'img1.jpg', 'مصنوع من خامات عالية الجودة')">
+  عرض التفاصيل
+  
+</div>
+<div class="product-card"
+><img src="C:\Users\User\OneDrive - Egyptian E-Learning University\Pictures\Facebook_files\480961595_122227149686022112_3715125349510902084_n.jpg" alt="">
+<h2>احمد حلمى </h2>
+<p>5دولار </p>
+
+</div>
+
+
+</div>
+            
+<div class="product-card">
+  <img src="C:\Users\User\OneDrive - Egyptian E-Learning University\Pictures\Facebook_files\484459639_658579719967428_4892053954003950230_n.jpg"alt="">
+  <h2>برشلونه اسود</h2>
+  <p>200جنيه</p>
+  <button onclick="addToCart('تيشرت الأهلي', 150, 'img1.jpg')">إضافة للسلة</button>
+<button onclick="viewDetails('تيشرت الأهلي', 150, 'img1.jpg', 'مصنوع من خامات عالية الجودة')">
+عرض التفاصيل
+ 
+</div>
+<div class="product-card">
+  <img src="C:\Users\User\OneDrive - Egyptian E-Learning University\Pictures\Facebook_files\484459639_658579719967428_4892053954003950230_n.jpg"alt="">
+  <h2>برشلونه اسود</h2>
+  <p>200جنيه</p>
+  <button onclick="addToCart('تيشرت الأهلي', 150, 'img1.jpg')">إضافة للسلة</button>
+<button onclick="viewDetails('تيشرت الأهلي', 150, 'img1.jpg', 'مصنوع من خامات عالية الجودة')">
+عرض التفاصيل
+    </div>
+    <div class="product-card">
+      <img src="C:\Users\User\OneDrive - Egyptian E-Learning University\Pictures\Facebook_files\484459639_658579719967428_4892053954003950230_n.jpg"alt="">
+      <h2>برشلونه اسود</h2>
+      <p>100جنيه</p>
+      <button onclick="addToCart('تيشرت الأهلي', 150, 'img1.jpg')">إضافة للسلة</button>
+    <button onclick="viewDetails('تيشرت الأهلي', 150, 'img1.jpg', 'مصنوع من خامات عالية الجودة')">
+    عرض التفاصيل
+     
+  </main>
+
+</footer>
+<script>
+    function addToCart(name, price, image) {
+      const product = { name, price, image };
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("تمت إضافة المنتج إلى السلة!");
+    }
+  </script>
+  <script src="script.js"></script>
+</header>
+
+<main>
+  <form action="#" method="post">
+  
+    <label>الرسالة:</label> 
+    <textarea name="message" rows="5" required></textarea><br>=
+    <button type="submit">إرسال</button>
+  </form>
+</main>
+
+<footer class="footer">
+  <p>📞 01275367079 | ✉️ elshazlymoh44@gmail.com</p>
+  <p>العنوان:الفيوم</p>
+
+  <p>جميع الحقوق محفوظة &copy; 2025 - متجر الملابس الرياضية</p>
+</footer>
+
+</body>
+</html>
